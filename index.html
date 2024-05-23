@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue Course</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<style>
+
+</style>
+
+<body>
+	<div id="app">
+		<button :class="buttonClasses" :click="toggle">Click Me</button>
+	</div>
+
+	<script>
+		Vue.createApp({
+			data() {
+				return {
+					buttonClasses: 'text-green'
+				}
+			},
+
+			methods: {
+				toggle() {
+					this.buttonClasses = this.buttonClasses === 'text-green' ? 'text-red' : 'text-green'
+				}
+			},
+		}).mount('#app')
+	</script>
+
+</body>
+
+</html>
